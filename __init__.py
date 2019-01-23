@@ -1,10 +1,12 @@
 from chumpy.ch import *
-from chumpy.logic import *
+from .logic import *
 
-from chumpy.optimization import minimize
-from chumpy import extras
-from chumpy import testing
-from chumpy import version as __version__
+from .optimization import minimize
+from . import extras
+from . import testing
+from .version import version as __version__
+
+from .version import version as __version__
 
 from numpy import bool, int, float, complex, object, unicode, str, nan, inf
 
@@ -79,8 +81,8 @@ class Sin(ch.Ch):
 
 x1 = Ch([10,20,30])
 result = Sin(x1) # or "result = Sin(x=x1)"
-print result.r
-print result.dr_wrt(x1)
+print (result.r)
+print (result.dr_wrt(x1))
 """
 
 demos['optimization'] = """
@@ -96,8 +98,8 @@ e3 = 2.625 - x + x*(y**3)
 
 objective = {'e1': e1, 'e2': e2, 'e3': e3}
 ch.minimize(objective, x0=[x,y], method='dogleg')
-print x # should be all 3.0
-print y # should be all 0.5
+print (x) # should be all 3.0
+print (y) # should be all 0.5
 """
 
 
@@ -105,12 +107,12 @@ print y # should be all 0.5
 
 def demo(which=None):
     if which not in demos:
-        print('Please indicate which demo you want, as follows:')
+        print ('Please indicate which demo you want, as follows:')
         for key in demos:
-            print("\tdemo('%s')" % (key,))
+            print ("\tdemo('%s')" % (key,))
         return
 
-    print('- - - - - - - - - - - <CODE> - - - - - - - - - - - -')
-    print(demos[which])
-    print('- - - - - - - - - - - </CODE> - - - - - - - - - - - -')
+    print ('- - - - - - - - - - - <CODE> - - - - - - - - - - - -')
+    print (demos[which])
+    print ('- - - - - - - - - - - </CODE> - - - - - - - - - - - -\n')
     exec('global np\n' + demos[which], globals(), locals())

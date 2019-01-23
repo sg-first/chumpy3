@@ -4,9 +4,9 @@ Author(s): Matthew Loper
 See LICENCE.txt for licensing and contact information.
 """
 
-from chumpy import ch
+from . import ch
 import numpy as np
-from chumpy.utils import row, col
+from .utils import row, col
 import scipy.sparse as sp
 import weakref
 

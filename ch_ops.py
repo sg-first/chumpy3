@@ -43,12 +43,14 @@ __all__ += not_yet_implemented
 __all__ += wont_implement
 __all__ += numpy_array_creation_routines
     
-    
-from chumpy import ch
+
+from . import ch
 import numpy as np
 import warnings
+# import cPickle as pickle
 import pickle
 import scipy.sparse as sp
+from . import utils
 from chumpy.utils import row, col
 from copy import copy as copy_copy
 

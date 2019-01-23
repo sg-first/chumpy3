@@ -9,11 +9,11 @@ See LICENCE.txt for licensing and contact information.
 __all__ = ['minimize']
 
 import numpy as np
-import chumpy.ch
+from . import ch
 import scipy.sparse as sp
 import scipy.optimize
 
-from chumpy.optimization_internal import minimize_dogleg
+from .optimization_internal import minimize_dogleg
 
 #from memory_profiler import profile, memory_usage
 

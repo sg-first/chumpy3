@@ -2,9 +2,9 @@ import sys
 import warnings
 import numpy as np
 import scipy.sparse as sp
-from chumpy import ch, utils
-from chumpy.ch import pif
-from chumpy.utils import timer
+from . import ch, utils
+from .ch import pif
+from .utils import timer
 
 
 def clear_cache_single(node):
