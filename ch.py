@@ -1203,7 +1203,7 @@ def depends_on(*dependencies):
         
         @wraps(func)
         def with_caching(self, *args, **kwargs):
-            func_name = func.func_name
+            func_name = func.__name__
             sdf = self._depends_on_deps[func_name]
             if sdf['out_of_date'] == True:
                 #tm = time.time()
